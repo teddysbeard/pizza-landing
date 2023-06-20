@@ -1,0 +1,60 @@
+.section-top {
+    height: 100vh;
+    background: #1e2a36 url(../images/bg1.jpg) no-repeat center;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 170px 0px 100px; // на случай добавления большого количества контента в этот блок
+}
+/* Полупрозрачная подложка на фон */
+.section-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba($color: #000000, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+
+}
+// стили контейнера с элементами section-top
+.section-top__container {
+    position: relative; /*Добавляем для того чтобы прописать z-index контейнеру и сделать его выше подложки*/
+    
+}
+// надзаголовок
+.section-top__info {
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #FCFF00;
+    margin: 0;
+}
+.section-top__title {
+    font-size: 55px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    margin: 0 0 35px;
+}
+@media(max-width: 992px) {
+    .section-top {
+        font-size: 16px;
+    }
+}
+@media(max-width: 576px) {
+    .section-top__info {
+        font-size: 16px;
+    }
+    .section-top__title {
+        font-size: 44px;
+    }
+}
+@media(max-width: 400px) {
+    .section-top__title {
+        font-size: 34px;
+    }
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/*стили шапки страницы*/
+.header-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px;
+  z-index: 5;
+  background: rgba(11, 20, 25, 0.9);
+  overflow: hidden;
+  /*стили сработают при наведение на ссылку курсора*/
+  /*стили сработают при наведение на ссылку курсора*/
+  /*стили сработают при наведение на ссылку курсора*/
+  /*logo-styles start*/
+  /*logo-styles end*/
+  /*span-text-styles start*/
+  /*span-text-styles end*/
+}
+.header-page__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-page__end {
+  display: flex;
+  align-items: center;
+}
+.header-page__ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.header-page__link {
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+.header-page__link:hover .header-page__text {
+  color: #1f1f1f;
+}
+.header-page__link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: calc(100% + 40px);
+  background: #fff;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.header-page__link:hover::before {
+  opacity: 1;
+}
+.header-page__logo {
+  width: 50px;
+  max-width: 100%;
+}
+.header-page__text {
+  position: relative;
+  transition: color 0.2s;
+}
+.header-page__nav {
+  margin-right: 15px;
+}
+.header-page__burger {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .header-page__link {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  .header-page__phone {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+}
+/*при 992px будем скрывать меню в бургер*/
+@media (max-width: 992px) {
+  .header-page {
+    padding: 5px 0px;
+  }
+  .header-page__nav {
+    display: none;
+  }
+  .header-page__burger {
+    display: block;
+    margin-right: -15px;
+  }
+}
+@media (max-width: 480px) {
+  .header-page__phone {
+    display: none;
+  }
+}

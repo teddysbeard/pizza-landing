@@ -1,0 +1,367 @@
+@charset "UTF-8";
+/*
+breakpoints:
+lg: 1200px
+md: 992px
+sm: 767px
+xs: 576px
+*/
+.btn {
+  background: #FF5441;
+  color: #eff;
+  display: inline-block;
+  padding: 18px 20px;
+  width: 240px;
+  max-width: 100%;
+  border-radius: 28px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  box-shadow: 0px 0px 38px 0px rgba(212, 66, 50, 0.8);
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background: #ec4b38;
+}
+
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+@media (max-width: 576px) {
+  .btn {
+    padding: 16px 20px;
+    width: 220px;
+    font-size: 16px;
+  }
+}
+/*btn-styles end*/
+/*container-styles start*/
+.container {
+  padding: 0 20px;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/*container-styles end*/
+/*phone-styles start*/
+.phone__item {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  border: 3px solid #eff;
+  border-radius: 21.5px;
+  padding: 8px 16px;
+  transition: color 0.2s, background 0.2s, opacity 0.2s;
+  /*добавляем эффект при наведении*/
+  /*добавляем эффект при нажатии*/
+}
+.phone__item:hover {
+  color: #1f1f1f;
+  background: #fff;
+}
+
+/*phone-styles end*/
+/* burger-menu styles start */
+.btn-menu {
+  background: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  border: 0;
+}
+.btn-menu__inner {
+  top: 50%;
+  display: block;
+  position: relative;
+  background: #fff;
+  height: 4px;
+  width: 100%;
+}
+.btn-menu__inner::before, .btn-menu__inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+}
+.btn-menu__inner::before {
+  top: -10px;
+}
+.btn-menu__inner::after {
+  bottom: 10px;
+}
+.btn-menu__box {
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+/* burger-menu styles end */
+/* common section styles start */
+.section {
+  padding: 100px 0px;
+}
+.section__title {
+  font-size: 48px;
+  text-align: center;
+  margin: 0 auto 40px;
+  font-family: "Montserrat", sans-serif;
+}
+.section__header {
+  margin-bottom: 90px;
+}
+
+.section__title--accent {
+  color: #ffa650;
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 90px 0px;
+  }
+  .section__title {
+    font-size: 36px;
+  }
+}
+/* common section styles end */
+.catalog-nav {
+  display: flex;
+  justify-content: center;
+}
+.catalog-nav__wrapper {
+  display: flex;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 23px;
+  overflow: hidden;
+}
+.catalog-nav__btn {
+  border: 0;
+  display: inline-block;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+  padding: 14px;
+  min-width: 150px;
+  font-size: 18px;
+  font-weight: 900;
+  font-family: "Montserrat", sans-serif;
+  color: #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+.catalog-nav__btn:hover {
+  background-color: #ffa650;
+  color: #fff;
+  border-right-color: #ffa650;
+}
+.catalog-nav__btn__item:last-of-type {
+  border-right: 0;
+}
+
+.catalog-nav__btn.is-active {
+  background-color: #1f1f1f;
+  color: #fff;
+  border-color: #1f1f1f;
+}
+
+/* адаптивность меню catalog-nav start */
+@media (max-width: 767px) {
+  .catalog-nav {
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+    /* catalog-nav__wrapper */
+  }
+  .catalog-nav__wrapper {
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .catalog-nav__item {
+    color: #000;
+    width: 50%;
+    flex-grow: 1;
+    /*убираем верхнюю границу у первых двух кнопок*/
+  }
+  .catalog-nav__btn { /* catalog-nav__btn */
+    border-top: 1px solid;
+    /* при экранах шириной меньше 767px
+    кнопки будут растяигваться на всю ширину элемента catalog-nav__item*/
+    min-width: 0;
+    width: 100%;
+  }
+  .catalog-nav:nth-of-type(1) .catalog-nav__btn, .catalog-nav:nth-of-type(2) .catalog-nav__btn {
+    border-top: 0;
+  }
+  .catalog-nav:nth-of-type(2) .catalog-nav__btn, .catalog-nav:nth-of-type(4) .catalog-nav__btn {
+    border-right: 0;
+  }
+}
+/* адаптивность меню catalog-nav end */
+/* catalog styles start */
+.catalog {
+  display: flex;
+  flex-wrap: wrap; /* Каждый последующий элемент переносится на следующую строчку */
+  margin: 0 -35px;
+}
+.catalog__item {
+  color: #000;
+  width: 33.3333333333%; /* На всей ширине страницы всегда будет умещаться три карточки */
+  margin-bottom: 90px;
+  padding: 0 35px; /* добавляем отступы между колонками */
+  position: relative;
+}
+.catalog__item::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  content: "";
+  height: 100%;
+  background: #f7f7f7;
+  transform: translateX(-50%);
+}
+.catalog__item:nth-of-type(3n+1)::before { /* убираем границу у элементов в левой колонке     */
+  content: none;
+}
+
+/* catalog styles end */
+/* product styles start */
+.product {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.product__img {
+  display: block;
+  margin: 0 auto 15px;
+}
+.product__content {
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+.product__title {
+  margin: 0 0 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+}
+.product__description {
+  color: #9f9f9f;
+}
+.product__sizes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-radius: 21px;
+  overflow: hidden;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.5);
+}
+.product__size {
+  display: inline-block;
+  color: #9f9f9f;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+  color: #e6e6e6;
+  font-weight: 900;
+  padding: 13px 33px;
+  border-radius: 21px;
+}
+.product-price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+.product__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product__btn {
+  box-shadow: none;
+  background: #ffa650;
+  width: 200px;
+  padding: 14px 20px;
+}
+.product__btn:hover {
+  background: #ff7c21;
+}
+
+.product__size.is-active {
+  color: #000;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* product styles end */
+/* адаптивность каталога продуктов */
+@media (max-width: 1250px) {
+  .catalog {
+    margin: 0 -20px;
+  }
+  .catalog__item {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .product__size {
+    padding: 13px 25px; /* меняем пэдинги на экраназ 993 - 1200px */
+  }
+}
+@media (max-width: 992px) {
+  .catalog__item {
+    width: 50%; /* делаем так, чтобы в одной строке было 2 карточки товара */
+  }
+  .catalog__item:nth-of-type(even)::before { /* для четных элементов добавляем боковую границу */
+    content: "";
+  }
+  .catalog__item:nth-of-type(odd)::before { /* для нечетных элементов убираем боковую границу */
+    content: none;
+  }
+}
+@media (max-width: 767px) {
+  .catalog__item {
+    width: 100%; /* делаем так, чтобы в одной строке была 1 карточка товара */
+    margin-bottom: 50px;
+  }
+  .catalog__item:last-of-type {
+    margin-bottom: 0px;
+  }
+  .catalog:nth-of-type(n)::before { /* для всех элементов убираем боковую границу */
+    content: none;
+  }
+  .catalog .product {
+    width: 350px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 50px; /* добавляем границу (нижнюю) */
+    border-bottom: 5px solid #f7f7f7;
+  }
+  .catalog__item:last-of-type .catalog__product {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 370px) {
+  .product__size {
+    padding: 13px 25px; /* меняем пэдинги на экраназ 993 - 1200px */
+  }
+  .product__price {
+    font-size: 18px;
+  }
+}
+/* адаптивность каталога продуктов */
