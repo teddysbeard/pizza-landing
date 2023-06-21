@@ -1,0 +1,17 @@
+.section-contacts {
+  background: #1f1f1f;
+}
+
+.contacts {
+  display: flex;
+  /*     display: flex;
+  &__start, &__end {
+      width: 50%;
+  } */
+}
+.contacts__start {
+  width: 50%;
+}
+.contacts__start {
+  width: 50%;
+}
