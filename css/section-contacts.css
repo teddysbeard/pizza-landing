@@ -1,17 +1,101 @@
+@charset "UTF-8";
 .section-contacts {
-  background: #1f1f1f;
+  background: #f1f1f1;
 }
 
 .contacts {
   display: flex;
-  /*     display: flex;
-  &__start, &__end {
-      width: 50%;
-  } */
+  align-items: center; /* align contacts__end relatively to contacts__start */
+  flex-wrap: wrap;
+  justify-content: center;
+  /* contact__end styles start */
+  /* contact__end styles end */
 }
 .contacts__start {
   width: 50%;
 }
-.contacts__start {
+.contacts__end {
   width: 50%;
+  padding-left: 30px;
+}
+.contacts__map {
+  height: 450px;
+  background: #fef0b4;
+}
+.contacts__item {
+  margin-bottom: 30px;
+}
+.contacts__title {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+.contacts__text {
+  font-size: 18px;
+}
+.contacts__phone {
+  text-decoration: none;
+  color: #1F1F1F;
+  transition: color 0.2s;
+}
+.contacts__phone:hover {
+  color: #ffa650;
+}
+
+/* socials styles start */
+.socials {
+  display: flex;
+}
+.socials__item {
+  margin-right: 7px;
+}
+.socials__item:last-of-type {
+  margin-bottom: 0;
+}
+.socials__icon {
+  fill: #ffa650;
+  width: 35px;
+  height: 35px;
+  transition: fill 0.2s, opacity 0.2s;
+}
+.socials__icon--vk:hover {
+  fill: #0076fe;
+}
+.socials__icon--telegram:hover {
+  fill: #2f9fd9;
+}
+.socials__icon--instagram:hover {
+  fill: #c232aa;
+}
+
+/*  socials styles end*/
+/* добавляем адаптивность секции section-contacts */
+@media (max-width: 992px) {
+  .contacts__map {
+    height: 350px;
+  }
+}
+@media (max-width: 767px) {
+  .contacts__start {
+    width: 100%;
+    order: 1;
+  }
+  .contacts__end {
+    width: 400px;
+    max-width: 100%; /* задаем чтобы элемент не вышел за пределы родителя */
+    margin-bottom: 40px;
+    padding-left: 0;
+  }
+}
+@media (max-width: 576px) {
+  .contacts__text {
+    font-size: 16px;
+  }
+  .socials__item {
+    margin-right: 15px;
+  }
+  .socials__icon {
+    width: 45px;
+    height: 45px;
+  }
 }

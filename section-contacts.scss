@@ -1,63 +1,106 @@
 .section-contacts {
-    background: #1f1f1f;
+    background: #f1f1f1;
 }
 .contacts {
     display: flex;
+    align-items: center; /* align contacts__end relatively to contacts__start */
+    flex-wrap: wrap;
+    justify-content: center;
     &__start {
         width: 50%;
     }
-    &__start {
+    &__end {
         width: 50%;
+        padding-left: 30px;
     }
-    /*     display: flex;
-    &__start, &__end {
-        width: 50%;
-    } */
-
+    &__map {
+        height: 450px;
+        background: #fef0b4;
+    }
+    /* contact__end styles start */
+    &__item {
+        margin-bottom: 30px;
+    }
+    &__title {
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+    }
+    &__text {
+        font-size: 18px;
+    }
+    &__phone {
+        text-decoration: none;
+        color: #1F1F1F;;
+        transition: color 0.2s;
+        &:hover {
+            color:  #ffa650;;
+        }
+    }
+    /* contact__end styles end */
 }
-
-.section {
-}
-.section-contacts {
-}
-.container {
-}
-.section-contacts__container {
-}
-.section__header {
-}
-.section__title {
-}
-.section-contacts__title {
-}
-.contacts {
-}
-.contacts
-.contacts__map {
-}
-.contacts__end {
-}
-.contacts__item {
-}
-.contacts__title {
-}
-.contacts__text {
-}
-.contacts__phone {
-}
+/* socials styles start */
 .socials {
+    display: flex;
+    &__item {
+        margin-right: 7px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    &__icon {
+        fill: #ffa650;
+        width: 35px;
+        height: 35px;
+        transition: fill 0.2s, opacity 0.2s;
+        &--vk:hover {
+            fill: #0076fe;
+        }
+        &--telegram:hover {
+            fill: #2f9fd9;
+        }
+        &--instagram:hover {
+            fill: #c232aa;
+        }
+    }
 }
-.socials__item {
+/*  socials styles end*/
+
+/* добавляем адаптивность секции section-contacts */
+@media (max-width:992px) {
+    .contacts {
+        &__map {
+            height: 350px;
+        }
+    }
 }
-.socials__link {
+@media (max-width:767px) {
+    .contacts {
+        &__start {
+            width: 100%;
+            order: 1;
+        }
+        &__end {
+            width: 400px;
+            max-width: 100%; /* задаем чтобы элемент не вышел за пределы родителя */
+            margin-bottom: 40px;
+            padding-left: 0;
+        }
+    }
 }
-.socials__icon {
-}
-.socials__icon--vk {
-}
-.socials__icon--inst {
-}
-.socials__logo {
-}
-.socials__icon--fb {
+@media (max-width:576px) {
+    .contacts {
+        &__text {
+            font-size: 16px;
+        }
+    }
+    .socials {
+        &__item {
+            margin-right: 15px;
+        }
+        &__icon {
+            width: 45px;
+            height: 45px;
+        }
+    }
 }

@@ -134,6 +134,12 @@ xs: 576px
   .section__title {
     font-size: 36px;
   }
+  .section__header {
+    margin-bottom: 70px;
+  }
+  .section-contacts__container {
+    padding: 0 10px;
+  }
 }
 /* common section styles end */
 .catalog-nav {
