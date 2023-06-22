@@ -1,4 +1,9 @@
 .popup {
+    /* поскольку по-умолчанию popup-меню скрыто пропишем стили */
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    /* ------------------------------------------------------- */
     position: fixed;
     z-index: 10;
     top: 0;
@@ -7,6 +12,13 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    /* убираем свойства, скрывающие popup-меню */
+    &.is-active {
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* ------------------------------------------------------- */
     &__wrapper {
         display: table;
         width: 100%;
@@ -34,6 +46,17 @@
             align-items: center;
         }
     }
+    &__title {
+        margin-bottom: 20px;
+    }
+    /* popup__subtitle styles start */
+    &__subtitle {
+        margin: 0 auto 40px;
+        text-align: center;
+        font-size: 24px;
+        max-width: 360px;
+    }
+    /* popup__subtitle styles end */
     &__btn-close {
         position: absolute;
         top: 20px;
@@ -42,6 +65,62 @@
     &__phone, &__mobile-menu {
         margin-bottom: 40px;
     }
+}
+/* order styles start */
+.order {
+    max-width: 310px;
+    margin: 0 auto;
+    /* order__img styles */
+    &__img {
+        display: block;
+        width: 185px;
+        height: auto;
+        margin: 0 auto 10px;
+    }
+    /* order__title styles */
+    &__title {
+        margin: 0 0 5px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-align: center;
+    }
+    /* order__size styles */
+    &__size {
+        margin: 0 0 30px;
+        color: #a2a2a2;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-align: center;
+    }
+}
+/* order styles end */
+
+/* form styles start */
+.form {
+    /* form__input styles start */
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 20px 28px;
+        background: #f7f7f7;
+        border-radius: 32px;
+        margin-bottom: 10px;
+        border: 2px solid transparent;
+        outline: none;
+        &:focus {
+            border-color: #ffa650;
+        }
+    }
+    /* form__input styles end */
+    /* form__btn styles start */
+    &__btn {
+        box-shadow: none;
+        background:  #ffa650;
+        width: 100%;
+        padding: 22px 28px;
+        border-radius: 50px;
+    }
+    /* form__btn styles start */
 }
 
 /* адаптив для popup */
@@ -55,6 +134,10 @@
             max-width: 100%;
             height: 100%;
             border-radius: 0;
+        }
+        &__subtitle {
+            font-size: 18px;
+            max-width: 260px;
         }
     }
 }

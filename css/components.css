@@ -121,18 +121,8 @@ xs: 576px
 .section {
   padding: 100px 0px;
 }
-.section__title {
-  font-size: 48px;
-  text-align: center;
-  margin: 0 auto 40px;
-  font-family: "Montserrat", sans-serif;
-}
 .section__header {
   margin-bottom: 90px;
-}
-
-.section__title--accent {
-  color: #ffa650;
 }
 
 @media (max-width: 576px) {
@@ -150,6 +140,22 @@ xs: 576px
   }
 }
 /* common section styles end */
+/* common page__title styles start */
+.page__title {
+  font-size: 48px;
+  text-align: center;
+  margin: 0 auto 40px;
+  font-family: "Montserrat", sans-serif;
+}
+.page__title--accent {
+  color: #ffa650;
+}
+
+@media (max-width: 576px) {
+  .page__title {
+    font-size: 36px;
+  }
+}
 .catalog-nav {
   display: flex;
   justify-content: center;

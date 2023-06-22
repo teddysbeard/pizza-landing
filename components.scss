@@ -121,25 +121,17 @@ xs: 576px
 /* common section styles start */
 .section {
     padding: 100px 0px;
-    &__title {
-        font-size: 48px;
-        text-align: center;
-        margin: 0 auto 40px;
-        font-family: "Montserrat", sans-serif;
-    }
     &__header {
         margin-bottom: 90px;
     }
 }
-.section__title--accent {
-color: #ffa650;
-}
+
 
 @media (max-width: 576px) {
     .section {
         padding: 90px 0px;
-        &__title {
-            font-size: 36px;
+        // &__title {
+        //     font-size: 36px;
         }
         &__header {
             margin-bottom: 70px;
@@ -147,9 +139,28 @@ color: #ffa650;
         &-contacts__container {
             padding: 0 10px;
         }
-    }
 }
 /* common section styles end */
+/* common page__title styles start */
+.page {
+    &__title {
+        font-size: 48px;
+        text-align: center;
+        margin: 0 auto 40px;
+        font-family: "Montserrat", sans-serif;
+        &--accent {
+            color: #ffa650;
+        }
+    }
+}
+@media (max-width: 576px) {
+    .page {
+        &__title {
+            font-size: 36px;
+        }
+    }
+}
+/* common page__title styles end */
 .catalog-nav {
     display: flex;
     justify-content: center;

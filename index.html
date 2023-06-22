@@ -73,7 +73,7 @@
     <section class="section section-catalog">
         <div class="container section-catalog__container">
             <header class="section__header">
-                <h2 class="section__title section__title--accent">Меню</h2>
+                <h2 class="page__title page__title--accent">Меню</h2>
                 <!-- меню навигации -->
                 <nav class="catalog-nav">
                     <ul class="catalog-nav__wrapper">
@@ -245,7 +245,7 @@
         <img src="./images/bg.jpg" alt="bg.jpg" class="section-about__img">
         <div class="container section-about__container">
             <div class="section-about__content">
-                <h2 class="section__title section-about__title">О нас</h2>
+                <h2 class="page__title section-about__title">О нас</h2>
                 <div class="section-about__text">
                     Доставим вам горячую пиццу менее чем за час или пицца бесплатно. Мы готовим пиццу только из свежих продуктов. Каждый день мы покупаем свежие овощи, грибы и мясо.
                 </div>
@@ -255,7 +255,7 @@
     <section class="section section-contacts">
         <div class="container section-contacts__container">
             <header class="section__header">
-                <h2 class="section__title section-contacts__title">Контакты</h2>
+                <h2 class="page__title section-contacts__title">Контакты</h2>
             </header>
             <div class="contacts">
                 <div class="contacts__start">
@@ -366,6 +366,43 @@
             </div>
         </div>
     </div>
-    <!-- popup-menu -->
+    <!-- popup-menu end-->
+    <!-- popup-order start -->
+    <div class="popup is-active popup-order">
+        <div class="popup__wrapper">
+            <div class="popup__inner">
+                <div class="popup__content">
+                    <!-- Второй класс popup__btn задаем для того чтобы позиционировать кнопку внутри попапа -->
+                    <button class="btn-close popup__btn-close"></button>
+                    <h2 class="page__title popup__title">Заполните форму</h2>
+                    <p class="popup__subtitle">Мы привезем вам горячую пиццу за 50 минут</p>
+                    <div class="order">
+                        <img src="./images/pizza.jpg" alt="" class="order__img">
+                        <h3 class="order__title">
+                            <span>Салями</span>
+                            <span>850</span> &#8381;
+                        </h3>
+                        <p class="order__size">35 см</p>
+                        <form class="form">
+                            <!-- hidden input-fields -->
+                            <input type="hidden" name="pizza">
+                            <input type="hidden" name="price">
+                            <input type="hidden" name="size">
+                            <!-- ------------------------- -->
+                            <input class="form__input" type="text" name="name" placeholder="Имя" required>
+                            <input class="form__input" type="text" name="phone" placeholder="Телефон" required>
+                            <input class="form__input" type="text" name="address" placeholder="Адрес" required>
+                            <select class="form__input" name="pay" id="">
+                                <option value="cash-pay">Оплата наличными</option>
+                                <option value="card-pay">Оплата картой</option>
+                            </select>
+                            <button class="btn form__btn" type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popup-order end -->
 </body>
 </html>
