@@ -51,10 +51,13 @@
     }
     /* popup__subtitle styles start */
     &__subtitle {
-        margin: 0 auto 40px;
+        margin: 0;
         text-align: center;
         font-size: 24px;
-        max-width: 360px;
+        &--order {
+            max-width: 360px;
+            margin: 0 auto 40px;
+        }
     }
     /* popup__subtitle styles end */
     &__btn-close {
@@ -64,6 +67,11 @@
     }
     &__phone, &__mobile-menu {
         margin-bottom: 40px;
+    }
+    &__phone {
+        text-decoration: none;
+        color: inherit;
+        white-space: nowrap;
     }
 }
 /* order styles start */
@@ -126,10 +134,13 @@
 /* адаптив для popup */
 
 @media (max-width:767px) {
+    /* popup media-query */
     .popup {
+        /* popup__iiner media-query styles*/
         &__inner {
             padding: 0;
         }
+        /* popup__content media-query styles*/
         &__content {
             max-width: 100%;
             height: 100%;
@@ -137,7 +148,10 @@
         }
         &__subtitle {
             font-size: 18px;
-            max-width: 260px;
+            /* popup__subtitle--order media-query styles */
+            &--order {
+                max-width: 260px;
+            }
         }
     }
 }

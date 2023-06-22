@@ -368,14 +368,14 @@
     </div>
     <!-- popup-menu end-->
     <!-- popup-order start -->
-    <div class="popup is-active popup-order">
+    <div class="popup popup-order">
         <div class="popup__wrapper">
             <div class="popup__inner">
                 <div class="popup__content">
                     <!-- Второй класс popup__btn задаем для того чтобы позиционировать кнопку внутри попапа -->
                     <button class="btn-close popup__btn-close"></button>
                     <h2 class="page__title popup__title">Заполните форму</h2>
-                    <p class="popup__subtitle">Мы привезем вам горячую пиццу за 50 минут</p>
+                    <p class="popup__subtitle popup__subtitle--order">Мы привезем вам горячую пиццу за 50 минут</p>
                     <div class="order">
                         <img src="./images/pizza.jpg" alt="" class="order__img">
                         <h3 class="order__title">
@@ -404,5 +404,36 @@
         </div>
     </div>
     <!-- popup-order end -->
+    <!--  popup-thanks start-->
+    <div class="popup popup-thanks">
+        <div class="popup__wrapper">
+            <div class="popup__inner">
+                <div class="popup__content">
+                    <!-- Второй класс popup__btn задаем для того чтобы позиционировать кнопку внутри попапа -->
+                    <button class="btn-close popup__btn-close"></button>
+                    <h2 class="page__title popup__title">Заполните форму</h2>
+                    <p class="popup__subtitle">Мы привезем вам горячую пиццу за 50 минут</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  popup-thanks end-->
+    <!--  popup-error start-->
+    <div class="popup is-active popup-error">
+        <div class="popup__wrapper">
+            <div class="popup__inner">
+                <div class="popup__content">
+                    <!-- Второй класс popup__btn задаем для того чтобы позиционировать кнопку внутри попапа -->
+                    <button class="btn-close popup__btn-close"></button>
+                    <h2 class="page__title popup__title">Произошла ошибка</h2>
+                    <p class="popup__subtitle">Пожалуйста, сделайте заказ по номеру 
+                        <a class="popup__phone" href="tel:+79999999999">+7 (999) 999-99-99</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  popup-error end-->
+
 </body>
 </html>
