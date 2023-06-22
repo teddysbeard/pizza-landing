@@ -69,6 +69,14 @@ xs: 576px
   color: #1f1f1f;
   background: #fff;
 }
+.phone__item--accent {
+  border-color: #ffa650;
+  color: #ffa650;
+}
+.phone__item--accent:hover {
+  background: #ffa650;
+  color: #fff;
+}
 
 /*phone-styles end*/
 /* burger-menu styles start */
@@ -100,7 +108,7 @@ xs: 576px
   top: -10px;
 }
 .btn-menu__inner::after {
-  bottom: 10px;
+  bottom: -10px;
 }
 .btn-menu__box {
   display: inline-block;
@@ -370,4 +378,66 @@ xs: 576px
     font-size: 18px;
   }
 }
-/* адаптивность каталога продуктов */
+/* адаптивность каталога продуктов конец */
+/* btn-close start */
+.btn-close {
+  border: none;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  transition: transform 0.2s, opacity 0.2s, border 0.2s;
+}
+.btn-close:hover {
+  transform: scale(1.1);
+  border: #d2d2d2 solid 1px;
+}
+.btn-close:active {
+  transform: scale(0.9);
+}
+.btn-close::before, .btn-close::after {
+  content: "";
+  background: #d2d2d2;
+  height: 40px;
+  width: 3px;
+  position: absolute;
+  border-radius: 10px;
+}
+.btn-close::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.btn-close::after {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* btn-close end */
+/* mobile-menu styles */
+.mobile-menu {
+  width: 100%; /* чтобы ссылки занимали всю ширину popup`а */
+}
+.mobile-menu__link {
+  display: block;
+  padding: 20px 0;
+  color: inherit;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+.mobile-menu__link:hover {
+  background: #ffa650;
+  color: #fff;
+}
+.mobile-menu__link:active {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .mobile-menu__link {
+    font-size: 20px;
+  }
+}
