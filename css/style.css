@@ -32,3 +32,7 @@ body {
   line-height: 1.375;
   color: #1F1F1F;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
