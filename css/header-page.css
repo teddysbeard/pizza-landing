@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*стили шапки страницы*/
 .header-page {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -16,6 +16,7 @@
   /*logo-styles end*/
   /*span-text-styles start*/
   /*span-text-styles end*/
+  /* js styles */
 }
 .header-page__container {
   display: flex;
@@ -75,6 +76,10 @@
 }
 .header-page__burger {
   display: none;
+}
+.header-page.is-active .header-page__link {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 @media (max-width: 1200px) {
