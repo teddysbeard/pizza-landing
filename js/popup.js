@@ -44,7 +44,7 @@
         else {
             e.preventDefault(); /* убираем стандартное поведение */
             let popup = document.querySelector('.' + popupClass); /* выделяем элемент по классу */
-            console.log('.' + popupClass);
+            // console.log('.' + popupClass);
             if (popup) { /* если элемент с таким классом есть, вызываем функцию showPopup и toggleScroll */
                 showPopup(popup);
                 toggleScroll();
