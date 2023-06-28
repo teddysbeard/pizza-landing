@@ -4,6 +4,7 @@
     if ($method !== 'POST') {
         exit();
     }
+    $to = 'dmitriy.komarov.1998@mail.ru';
     $project_name = 'PizzaTime';
     $admin_email = 'dmitriy.komarov.1998@mail.ru';
     $form_subject = 'Заявка на доставку';
@@ -24,7 +25,7 @@
         $color_counter ++;
     }
 
-    $message = "<table style='width: 100%;'>$message</table>"
+    $message = "<table style='width: 100%;'>$message</table>";
    
     // $message = '<table style="width: 100%;">
     // <tr style="background-color: #f8f8f8;">
@@ -38,9 +39,10 @@
     // </table>'
 
     $headers  = "MIME-Version: 1.0\r\n"; 
-    $headers .= "Content-type: text/plain; charset=utf-8\r\n";
+    // $headers .= "Content-type: text/plain; charset=utf-8\r\n";
+    $headers .= "Content-type: text/html; charset=utf-8\r\n";
     $headers .= "From: $admin_email\r\n";
 
     
-    mail($project_name,$form_subject,$message, $headers);
+    mail($to, $project_name, $form_subject, $message, $headers);
     ?>

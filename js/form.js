@@ -13,18 +13,20 @@
             let item = items[i];
             let name = item.name;
             let value = item.value;
-            if (name) {
-                str += name + '=' + value;
+            let separator = i === 0 ? '' : '&';
+            if (value) {
+                str += separator + name + '=' + value;
             }
         }
-    }
+        return str;
+    };
 
     /* Функция отправляет форму через Ajax*/
     let formSend = function(form) {
         // let data = 'name=value&name2=value2'
         let data = serialize(form);
         console.log(data);
-        return;
+        // return;
         let xhr = new XMLHttpRequest();
         let url = 'mail/mail.php';
 
