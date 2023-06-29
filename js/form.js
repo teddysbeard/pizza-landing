@@ -1,4 +1,8 @@
 (function(){
+    let toggleScroll = function() {
+        body.classList.toggle('no-scroll');
+        console.log(`toggle-scroll ${body.classList.contains('no-scroll')}`);
+    }
     let forms = document.querySelectorAll('.form-send');
     console.log(forms);
     if (forms.length === 0) {
@@ -34,8 +38,20 @@
         // xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
-            // console.log('done');
             console.log(xhr.response);
+            let activePopup = document.querySelector('.popup.is-active');
+            if (activePopup) {
+                activePopup.classList.remove('is-active');
+            } else {
+                toggleScroll();
+            }
+            // console.log('done');
+            // console.log(xhr.response);
+            if (xhr.response === 'success') {
+                document.querySelector('.popup-thanks').classList.add('is-active');
+            } else {
+                document.querySelector('.popup-error').classList.add('is-active');
+            }
         };
         xhr.send(data);
     }

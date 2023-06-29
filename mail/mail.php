@@ -12,6 +12,8 @@
     $message = '';
     $color_counter = 1;
 
+    print_r($_POST);
+    exit();
     foreach($_POST as $key => $value) {
         if ($value === '') {
             continue;
@@ -44,5 +46,10 @@
     $headers .= "From: $admin_email\r\n";
 
     
-    mail($to, $project_name, $form_subject, $message, $headers);
+    $success_send = mail($to, $project_name, $form_subject, $message, $headers);
+    if ($success_send) {
+        echo "success";
+    } else {
+        echo 'error';
+    }
     ?>
