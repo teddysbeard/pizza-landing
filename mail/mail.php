@@ -56,7 +56,7 @@
     $headers .= 'dmitriy.komarov.1998@mail.ru';
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
     $body = '';
-    foreach($_POST as $key => $value) {
+    foreach($_POST as $key => $value) { /* проходимся по ассоциативному массиву */
         if ($value === '') {
             continue;
         }

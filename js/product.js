@@ -14,13 +14,24 @@
         return;
     }
 
+    /* функция меняет цену выбранного товара в зависимости от выбранного пользователем размера */
+    const updateProductSize = function(product, price) {
+        let productPrice = product.querySelector('.product-price__value');
+        productPrice.textContent = price;
+
+    }
+    /* --------------------------------------------------------------------------------------- */
+
     const changeProductSize = function(target) {
         // console.log(target);
         let product = closestITemByClass(target, 'product');
         // console.log(product);
         let previousBtnActive = product.querySelector('.product__size.is-active');
+        let newPrice = target.getAttribute('data-product-size-price');
         previousBtnActive.classList.remove('is-active'); /* убираем у предыдущей кнопки класс is-active */
         target.classList.add('is-active'); /* добавляем текущей кнопке класс is-active */
+        /* меняем цену выбранного товара в зависимости от выбранного пользователем размера */
+        updateProductSize(product, newPrice);
 
     }
     const changeProductOrderInfo = function(target) {
