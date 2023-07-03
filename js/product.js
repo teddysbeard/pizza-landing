@@ -18,6 +18,7 @@
     const updateProductSize = function(product, price) {
         let productPrice = product.querySelector('.product-price__value');
         productPrice.textContent = price;
+        console.log(`productPrice${productPrice.textContent}`);
 
     }
     /* --------------------------------------------------------------------------------------- */
